@@ -9,15 +9,17 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --glass-bg: rgba(255, 255, 255, 0.15);
-            --glass-border: rgba(255, 255, 255, 0.3);
-            --glass-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
-            --glass-backdrop: rgba(255, 255, 255, 0.25);
-            --primary: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
-            --primary-glow: rgba(102, 126, 234, 0.5);
-            --text-primary: #ffffff;
-            --text-secondary: rgba(255, 255, 255, 0.85);
-            --dark-bg: linear-gradient(135deg, #0c0c0c 0%, #1a1a2e 50%, #16213e 100%);
+            /* WHITISH GLASS THEME */
+            --glass-bg: rgba(255, 255, 255, 0.25);
+            --glass-border: rgba(255, 255, 255, 0.4);
+            --glass-shadow: 0 8px 32px rgba(255, 255, 255, 0.1);
+            --glass-backdrop: rgba(255, 255, 255, 0.35);
+            --primary: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 50%, #e2e8f0 100%);
+            --primary-glow: rgba(255, 255, 255, 0.6);
+            --text-primary: #1e293b;
+            --text-secondary: rgba(30, 41, 59, 0.9);
+            /* SUBTLE DARK BACKGROUND for contrast */
+            --dark-bg: linear-gradient(135deg, #1e293b 0%, #334155 30%, #475569 60%, #64748b 100%);
         }
         
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -37,7 +39,7 @@
             padding: 0 2rem;
         }
         
-        /* Animated Background */
+        /* WHITISH Glass Animated Background */
         .bg-animation {
             position: fixed;
             top: 0;
@@ -46,14 +48,14 @@
             height: 100%;
             z-index: -3;
             background: 
-                radial-gradient(circle at 20% 80%, rgba(120, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 80% 20%, rgba(255, 119, 198, 0.3) 0%, transparent 50%),
-                radial-gradient(circle at 40% 40%, rgba(120, 219, 255, 0.3) 0%, transparent 50%);
-            animation: bgShift 20s ease-in-out infinite;
+                radial-gradient(circle at 20% 80%, rgba(248, 250, 252, 0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(241, 245, 249, 0.25) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(226, 232, 240, 0.2) 0%, transparent 50%);
+            animation: bgShift 25s ease-in-out infinite;
         }
         @keyframes bgShift {
             0%, 100% { transform: scale(1) rotate(0deg); }
-            50% { transform: scale(1.1) rotate(180deg); }
+            50% { transform: scale(1.05) rotate(180deg); }
         }
         
         /* Glass Canvas Particles */
@@ -67,15 +69,15 @@
             pointer-events: none;
         }
         
-        /* GLASS NAVBAR */
+        /* WHITISH GLASS NAVBAR */
         .glass-nav {
             position: fixed;
             top: 0;
             width: 100%;
             padding: 1rem 0;
             z-index: 1000;
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            backdrop-filter: blur(25px) saturate(200%);
+            -webkit-backdrop-filter: blur(25px) saturate(200%);
             background: var(--glass-bg);
             border-bottom: 1px solid var(--glass-border);
             box-shadow: var(--glass-shadow);
@@ -83,8 +85,8 @@
         }
         .glass-nav.scrolled {
             padding: 0.5rem 0;
-            backdrop-filter: blur(30px) saturate(200%);
-            background: rgba(255, 255, 255, 0.2);
+            backdrop-filter: blur(35px) saturate(220%);
+            background: rgba(255, 255, 255, 0.3);
         }
         
         .nav-container { 
@@ -136,7 +138,7 @@
         
         .glass-btn {
             background: var(--glass-bg);
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
             border-radius: 50px;
             padding: 0.8rem 1.5rem;
@@ -153,7 +155,7 @@
         .glass-btn:hover {
             background: var(--glass-backdrop);
             transform: translateY(-2px);
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            box-shadow: 0 15px 35px rgba(255,255,255,0.2);
         }
         
         .hamburger {
@@ -170,7 +172,7 @@
             transition: 0.3s;
         }
         
-        /* HERO GLASS SECTION */
+        /* HERO WHITISH GLASS */
         #hero {
             min-height: 100vh;
             display: flex;
@@ -183,8 +185,8 @@
         
         .hero-glass {
             background: var(--glass-bg);
-            backdrop-filter: blur(25px) saturate(180%);
-            -webkit-backdrop-filter: blur(25px) saturate(180%);
+            backdrop-filter: blur(30px) saturate(200%);
+            -webkit-backdrop-filter: blur(30px) saturate(200%);
             border: 1px solid var(--glass-border);
             border-radius: 30px;
             padding: 4rem 3rem;
@@ -200,7 +202,7 @@
             left: -50%;
             width: 200%;
             height: 200%;
-            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.1), transparent);
+            background: linear-gradient(45deg, transparent, rgba(255,255,255,0.3), transparent);
             animation: glassShine 4s infinite;
             pointer-events: none;
         }
@@ -260,7 +262,7 @@
         .section-title h2::after {
             content: '';
             position: absolute;
-            bottom: -15px;
+                        bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
             width: 100px;
@@ -270,7 +272,7 @@
             filter: blur(1px);
         }
         
-        /* ABOUT GLASS */
+        /* ABOUT WHITISH GLASS */
         #about { background: transparent; }
         .about-grid {
             display: grid;
@@ -283,8 +285,8 @@
         
         .glass-card {
             background: var(--glass-bg);
-            backdrop-filter: blur(20px) saturate(180%);
-            -webkit-backdrop-filter: blur(20px) saturate(180%);
+            backdrop-filter: blur(25px) saturate(200%);
+            -webkit-backdrop-filter: blur(25px) saturate(200%);
             border: 1px solid var(--glass-border);
             border-radius: 25px;
             padding: 3rem;
@@ -307,7 +309,7 @@
         }
         .glass-card:hover {
             transform: translateY(-15px) scale(1.02);
-            box-shadow: 0 25px 50px rgba(0,0,0,0.3);
+            box-shadow: 0 25px 50px rgba(255,255,255,0.2);
         }
         .glass-card:hover::before { opacity: 0.05; }
         .glass-card > * { position: relative; z-index: 1; }
@@ -321,7 +323,7 @@
             align-items: center;
             justify-content: center;
             font-size: 8rem;
-            color: rgba(255,255,255,0.1);
+            color: rgba(30,41,59,0.1);
             position: relative;
             overflow: hidden;
         }
@@ -329,11 +331,11 @@
             content: 'AM';
             font-size: 4rem;
             font-weight: 800;
-            color: white;
+            color: #1e293b;
             z-index: 2;
         }
         
-        /* SKILLS GLASS BADGES */
+        /* SKILLS WHITISH GLASS BADGES */
         .skills-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -342,7 +344,7 @@
         }
         .skill-glass {
             background: var(--glass-bg);
-            backdrop-filter: blur(15px);
+            backdrop-filter: blur(20px);
             border: 1px solid var(--glass-border);
             border-radius: 20px;
             padding: 2rem 1.5rem;
@@ -354,7 +356,7 @@
         .skill-glass:hover {
             transform: translateY(-10px) rotate(2deg);
             background: var(--glass-backdrop);
-            box-shadow: 0 20px 40px rgba(102,126,234,0.3);
+            box-shadow: 0 20px 40px rgba(255,255,255,0.3);
         }
         .skill-glass i {
             font-size: 3rem;
@@ -369,9 +371,10 @@
             font-size: 1.1rem;
             font-weight: 600;
             margin: 0;
+            color: var(--text-primary);
         }
         
-        /* PROJECTS GLASS GRID */
+        /* PROJECTS WHITISH GLASS GRID */
         #projects .projects-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
@@ -383,7 +386,7 @@
         
         .project-glass {
             background: var(--glass-bg);
-            backdrop-filter: blur(25px);
+            backdrop-filter: blur(30px);
             border: 1px solid var(--glass-border);
             border-radius: 25px;
             overflow: hidden;
@@ -393,7 +396,7 @@
         }
         .project-glass:hover {
             transform: translateY(-20px);
-            box-shadow: 0 35px 70px rgba(0,0,0,0.4);
+            box-shadow: 0 35px 70px rgba(255,255,255,0.25);
         }
         .project-header {
             height: 220px;
@@ -403,12 +406,12 @@
             align-items: center;
             justify-content: center;
             font-size: 4.5rem;
-            color: rgba(255,255,255,0.1);
+            color: rgba(30,41,59,0.1);
         }
         .project-header::before {
             content: attr(data-icon);
             font-size: 3rem;
-            color: white;
+            color: #1e293b;
             z-index: 2;
             font-family: 'Font Awesome 6 Free';
             font-weight: 900;
@@ -424,7 +427,7 @@
         }
         .tag-glass {
             background: var(--glass-bg);
-            backdrop-filter: blur(10px);
+            backdrop-filter: blur(15px);
             border: 1px solid var(--glass-border);
             padding: 0.4rem 1rem;
             border-radius: 20px;
@@ -438,7 +441,7 @@
             color: var(--text-primary);
         }
         
-        /* CONTACT GLASS */
+        /* CONTACT WHITISH GLASS */
         #contact {
             padding: 8rem 0 4rem;
             position: relative;
@@ -453,7 +456,7 @@
         }
         .contact-form {
             background: var(--glass-bg);
-            backdrop-filter: blur(25px);
+            backdrop-filter: blur(30px);
             border: 1px solid var(--glass-border);
             border-radius: 25px;
             padding: 3rem;
@@ -462,8 +465,8 @@
         .contact-form input,
         .contact-form textarea {
             width: 100%;
-            background: rgba(255,255,255,0.08);
-            backdrop-filter: blur(10px);
+            background: rgba(255,255,255,0.5);
+            backdrop-filter: blur(15px);
             border: 1px solid var(--glass-border);
             border-radius: 15px;
             padding: 1.2rem;
@@ -478,7 +481,7 @@
             outline: none;
             border-color: transparent;
             box-shadow: 0 0 0 3px var(--primary-glow);
-            background: rgba(255,255,255,0.15);
+            background: rgba(255,255,255,0.7);
         }
         .contact-form input::placeholder,
         .contact-form textarea::placeholder {
@@ -494,7 +497,7 @@
                 left: 0;
                 width: 100%;
                 background: var(--glass-bg);
-                backdrop-filter: blur(20px);
+                backdrop-filter: blur(25px);
                 flex-direction: column;
                 padding: 2rem;
                 transform: translateY(-100vh);
@@ -512,13 +515,13 @@
         }
         
         /* Animations */
-                @keyframes float {
+        @keyframes float {
             0%, 100% { transform: translateY(0px); }
             50% { transform: translateY(-10px); }
         }
         .glass-card.float { animation: float 6s ease-in-out infinite; }
         
-        /* Scroll Animations - FIXED */
+        /* Scroll Animations */
         .reveal {
             opacity: 0;
             transform: translateY(50px);
@@ -532,7 +535,7 @@
         /* Footer */
         footer {
             background: var(--glass-bg);
-            backdrop-filter: blur(20px);
+            backdrop-filter: blur(25px);
             border-top: 1px solid var(--glass-border);
             text-align: center;
             padding: 3rem 2rem;
@@ -548,7 +551,7 @@
     <!-- Glass Particles -->
     <canvas id="glass-particles"></canvas>
     
-    <!-- GLASS NAVBAR -->
+        <!-- WHITISH GLASS NAVBAR -->
     <nav class="glass-nav" id="navbar">
         <div class="nav-container">
             <div class="logo">Alvin Motii</div>
@@ -569,7 +572,7 @@
         </div>
     </nav>
 
-    <!-- HERO GLASS -->
+    <!-- HERO WHITISH GLASS -->
     <section id="hero">
         <div class="hero-glass reveal">
             <h1>Hi, I'm <span>Alvin Motii</span></h1>
@@ -585,7 +588,7 @@
         </div>
     </section>
 
-    <!-- ABOUT GLASS -->
+    <!-- ABOUT WHITISH GLASS -->
     <section id="about" class="glass-section">
         <div class="container">
             <div class="section-title reveal">
@@ -632,7 +635,7 @@
         </div>
     </section>
 
-    <!-- PROJECTS GLASS -->
+    <!-- PROJECTS WHITISH GLASS -->
     <section id="projects" class="glass-section">
         <div class="container">
             <div class="section-title reveal">
@@ -705,7 +708,7 @@
         </div>
     </section>
 
-    <!-- CONTACT GLASS -->
+    <!-- CONTACT WHITISH GLASS -->
     <section id="contact" class="glass-section">
         <div class="container">
             <div class="section-title reveal">
@@ -716,21 +719,21 @@
                     <h3><i class="fas fa-gem"></i> Ready to collaborate?</h3>
                     <div style="margin: 2rem 0;">
                         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; opacity: 0.9;">
-                            <i class="fas fa-envelope" style="font-size: 1.5rem; color: #667eea; width: 40px;"></i>
+                            <i class="fas fa-envelope" style="font-size: 1.5rem; color: #f1f5f9; width: 40px;"></i>
                             <div>
                                 <h4>Email</h4>
                                 <p>alvin.motii@gmail.com</p>
                             </div>
                         </div>
                         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem; opacity: 0.9;">
-                            <i class="fas fa-map-marker-alt" style="font-size: 1.5rem; color: #764ba2; width: 40px;"></i>
+                            <i class="fas fa-map-marker-alt" style="font-size: 1.5rem; color: #e2e8f0; width: 40px;"></i>
                             <div>
                                 <h4>Location</h4>
                                 <p>Nairobi, Kenya</p>
                             </div>
                         </div>
                         <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 2rem; opacity: 0.9;">
-                            <i class="fas fa-clock" style="font-size: 1.5rem; color: #f093fb; width: 40px;"></i>
+                            <i class="fas fa-clock" style="font-size: 1.5rem; color: #f8fafc; width: 40px;"></i>
                             <div>
                                 <h4>Availability</h4>
                                 <p>Full-time • Immediate</p>
@@ -760,18 +763,18 @@
         </div>
     </section>
 
-    <!-- GLASS FOOTER -->
+    <!-- WHITISH GLASS FOOTER -->
     <footer>
         <div style="max-width: 1200px; margin: 0 auto;">
-            <p style="opacity: 0.8; font-weight: 500;">
-                © 2024 Alvin Motii. Crafted with <i class="fas fa-heart" style="color: #ff6b9d;"></i> 
+            <p style="opacity: 0.9; font-weight: 500;">
+                © 2024 Alvin Motii. Crafted with <i class="fas fa-heart" style="color: #f1f5f9;"></i> 
                 . All rights reserved.
             </p>
         </div>
     </footer>
 
     <script>
-        // Glass Particles System
+        // WHITISH Glass Particles System
         const canvas = document.getElementById('glass-particles');
         const ctx = canvas.getContext('2d');
         
@@ -789,16 +792,16 @@
             reset() {
                 this.x = Math.random() * canvas.width;
                 this.y = Math.random() * canvas.height;
-                this.vx = (Math.random() - 0.5) * 0.8;
-                this.vy = (Math.random() - 0.5) * 0.8;
+                this.vx = (Math.random() - 0.5) * 0.7;
+                this.vy = (Math.random() - 0.5) * 0.7;
                 this.radius = Math.random() * 2 + 0.5;
-                this.opacity = Math.random() * 0.5 + 0.2;
+                this.opacity = Math.random() * 0.4 + 0.2;
                 this.life = 1;
             }
             update() {
                 this.x += this.vx;
                 this.y += this.vy;
-                this.life -= 0.005;
+                this.life -= 0.004;
                 
                 if (this.x < 0 || this.x > canvas.width || this.y < 0 || this.y > canvas.height || this.life <= 0) {
                     this.reset();
@@ -807,9 +810,9 @@
             draw() {
                 ctx.save();
                 ctx.globalAlpha = this.opacity * this.life;
-                ctx.fillStyle = '#667eea';
-                ctx.shadowColor = '#667eea';
-                ctx.shadowBlur = 10;
+                ctx.fillStyle = 'rgba(255, 255, 255, 0.8)';
+                ctx.shadowColor = 'rgba(255, 255, 255, 0.6)';
+                ctx.shadowBlur = 12;
                 ctx.beginPath();
                 ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
                 ctx.fill();
@@ -818,7 +821,7 @@
         }
         
         const particles = [];
-        for (let i = 0; i < 80; i++) particles.push(new GlassParticle());
+        for (let i = 0; i < 70; i++) particles.push(new GlassParticle());
         
         function animateParticles() {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -887,7 +890,7 @@
             });
         });
         
-        // Scroll Reveal Animation - FIXED
+        // Scroll Reveal Animation
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
